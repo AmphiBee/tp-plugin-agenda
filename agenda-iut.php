@@ -15,3 +15,4 @@ Author URI: http://toto.com
 
 require __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'cpt' . DIRECTORY_SEPARATOR . 'loader.php';
 require __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'fields' . DIRECTORY_SEPARATOR . 'loader.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'widgets' . DIRECTORY_SEPARATOR . 'loader.php';
