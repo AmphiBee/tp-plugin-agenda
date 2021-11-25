@@ -35,6 +35,8 @@ class WP_Search_Event extends WP_Widget
 
 		echo esc_html__($instance['text'], 'text_domain');
 
+		echo apply_filters('wp-widgets/search-events', get_search_form(false));
+
 		echo '</div>';
 
 		echo $args['after_widget'];
@@ -71,9 +73,9 @@ class WP_Search_Event extends WP_Widget
 }
 $my_widget = new WP_Search_Event();
 
-function register_search_widget()
-{
-	register_widget('WP_Search_Event');
-}
 
-add_action('widgets_init', 'register_search_widget');
+add_filter('wp-widgets/search-events', function ($html) {
+	$input_hidden = '<input type="hidden" name="post_type" value="event">';
+	$html = str_replace('</form>', "{$input_hidden}</form>", $html);
+	return $html;
+});
